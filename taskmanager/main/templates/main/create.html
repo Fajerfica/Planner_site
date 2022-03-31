@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Make a task
+{% endblock %}
+
+{% block content %}
+        <div class="alert alert-warning mt-2">
+            <h1>Create yor today's task!</h1>
+        <p>Be open-minded planning</p>
+        </div>
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.title}}<br><br>
+        {{form.task}}<br>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <span>{{error}}</span>
+    </form>
+{% endblock %}

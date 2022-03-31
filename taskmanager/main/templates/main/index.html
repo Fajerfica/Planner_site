@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <center>
+        <h1>Your planner</h1>
+    <p>List of tasks below</p>
+        {% if tasks %}
+    {% for el in tasks %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{el.title}}</h3>
+            <p>{{ el.task }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div class="alert alert-warning mt-2">
+            <h3>No records</h3>
+        </div>
+
+    {% endif %}
+    </center>
+
+
+{% endblock %}
+
